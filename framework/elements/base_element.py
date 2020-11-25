@@ -78,3 +78,7 @@ class BaseElement:
         except TimeoutException:
             return False
         return True
+
+    def save_elements_to_list(self):
+        elements = self.browser.find_elements(*self.selector)
+        return elements
