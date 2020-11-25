@@ -1,7 +1,7 @@
 from framework.elements.base_element import BaseElement
 
 
-class Button(BaseElement):
-    def send_file(self, file_path):
+class Link(BaseElement):
+    def get_link(self):
         element = self.find_element(self.selector)
-        element.send_keys(file_path)
+        return element.get_attribute("href")
