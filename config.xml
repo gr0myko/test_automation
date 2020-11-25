@@ -2,6 +2,7 @@
 <configurations>
     <browser>Chrome</browser>
     <lang>ru</lang>
-    <url>http://example.com/</url>
+    <url>https://vk.com/</url>
     <wait>20</wait>
+    <vk_api_url>https://api.vk.com/method</vk_api_url>
 </configurations>

@@ -6,15 +6,18 @@ from framework.base.utils.api_utils.status_code import StatusCode
 
 
 class APIutils:
-    def __init__(self, url, request_type: RequestType, data=None):
-        self.url = Config().get_url() + url
-        self.response = self.send_request(request_type=request_type, data=data)
+    def __init__(self, url, request_type: RequestType, data=None, files=None):
+        if files is not None:
+            self.url = url
+        else:
+            self.url = Config().get_vk_api_url() + url
+        self.response = self.send_request(request_type=request_type, data=data, files=files)
 
-    def send_request(self, request_type: RequestType, data=None):
+    def send_request(self, request_type: RequestType, data=None, files=None):
         if request_type == RequestType.GET:
             return requests.get(self.url)
         elif request_type == RequestType.POST:
-            return requests.post(self.url, data=data)
+            return requests.post(self.url, data=data, files=files)
         elif request_type == RequestType.PUT:
             return requests.put(self.url, data=data)
         elif request_type == RequestType.DELETE:
