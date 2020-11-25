@@ -1,4 +1,5 @@
 from framework.elements.base_element import BaseElement
+from selenium.webdriver.common.keys import Keys
 
 
 class TextInput(BaseElement):
@@ -14,3 +15,7 @@ class TextInput(BaseElement):
     def send_text(self, text):
         element = self.find_element(self.selector)
         element.send_keys(text)
+
+    def select_text(self):
+        element = self.find_element(self.selector)
+        element.send_keys(Keys.CONTROL + "a")

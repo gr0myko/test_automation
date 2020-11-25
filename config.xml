@@ -2,6 +2,6 @@
 <configurations>
     <browser>Chrome</browser>
     <lang>ru</lang>
-    <url>http://example.com/</url>
+    <url>http://the-internet.herokuapp.com/iframe</url>
     <wait>20</wait>
 </configurations>
